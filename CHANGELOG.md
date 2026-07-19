@@ -9,6 +9,9 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 - Project hygiene: `SECURITY.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, and README
   badges. No functional/detection changes.
+- Official MCP Registry support: `server.json` and the `mcp-name` ownership marker
+  in the README. The marker reaches PyPI with the next release, so the registry
+  publish targets `0.1.1`.
 
 ## [0.1.0] - 2026-07-20
 

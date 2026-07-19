@@ -7,6 +7,8 @@
 
 **Free, local, IP-safe AI-development security — an MCP server from Netallion.**
 
+<!-- mcp-name: io.github.netallion/netallion-mcp-lite -->
+
 Netallion MCP Lite is a small [Model Context Protocol](https://modelcontextprotocol.io) server that helps you and your AI coding assistants avoid the most common mistake in AI-assisted development: leaking a credential. It flags a curated set of **commodity, high-confidence** secrets and credentials (AWS, GitHub, Stripe, OpenAI, private keys, database URIs, and more) in text and files.
 
 It runs **entirely on your machine**. No account. No data sent to Netallion. Detected secrets are **redacted** before results are returned, so they are safe to hand back into an AI assistant's context.

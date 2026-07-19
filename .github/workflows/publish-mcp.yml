@@ -1,0 +1,45 @@
+name: Publish to PyPI + MCP Registry
+
+# One-time prerequisites:
+#  - Configure a PyPI Trusted Publisher for this repo + workflow (publish-mcp.yml)
+#    + environment "pypi": https://docs.pypi.org/trusted-publishers/
+#    (or replace the pypi-publish step with a token-based `twine upload`).
+#  - The README must contain the `mcp-name` marker (it does) so the registry can
+#    verify PyPI ownership. That marker only reaches PyPI from v0.1.1 onward.
+# Fires on version tags (v*). Publishes the package to PyPI, then the server to
+# the official MCP Registry via GitHub OIDC — no stored secrets.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  id-token: write # PyPI Trusted Publishing + MCP Registry OIDC
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build sdist + wheel
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
+      - name: Publish to PyPI (Trusted Publishing)
+        uses: pypa/gh-action-pypi-publish@release/v1
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+      - name: Sync server.json version to the tag
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          python -c "import json,sys; d=json.load(open('server.json')); d['version']=sys.argv[1]; d['packages'][0]['version']=sys.argv[1]; json.dump(d, open('server.json','w'), indent=2)" "$VERSION"
+      - name: Authenticate to MCP Registry (GitHub OIDC)
+        run: ./mcp-publisher login github-oidc
+      - name: Publish to MCP Registry
+        run: ./mcp-publisher publish

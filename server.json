@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.netallion/netallion-mcp-lite",
+  "title": "Netallion MCP Lite",
+  "description": "Local secret & credential checks for AI-assisted dev — runs on your machine, results redacted.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/netallion/netallion-mcp-lite",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "netallion-mcp-lite",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
