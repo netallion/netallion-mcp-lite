@@ -3,7 +3,7 @@
   "name": "io.github.netallion/netallion-mcp-lite",
   "title": "Netallion MCP Lite",
   "description": "Local secret & credential checks for AI-assisted dev — runs on your machine, results redacted.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "url": "https://github.com/netallion/netallion-mcp-lite",
     "source": "github"
@@ -12,7 +12,7 @@
     {
       "registryType": "pypi",
       "identifier": "netallion-mcp-lite",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "transport": {
         "type": "stdio"
       }

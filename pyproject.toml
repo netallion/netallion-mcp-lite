@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "netallion-mcp-lite"
-version = "0.1.0"
+version = "0.1.1"
 description = "Free, local, IP-safe MCP server for AI-development security — commodity secret & credential checks from Netallion. Part of Agentic Development Governance."
 readme = "README.md"
 license = "MIT"
