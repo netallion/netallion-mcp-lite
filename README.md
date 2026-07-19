@@ -1,5 +1,10 @@
 # Netallion MCP Lite
 
+[![PyPI](https://img.shields.io/pypi/v/netallion-mcp-lite.svg)](https://pypi.org/project/netallion-mcp-lite/)
+[![Python](https://img.shields.io/pypi/pyversions/netallion-mcp-lite.svg)](https://pypi.org/project/netallion-mcp-lite/)
+[![CI](https://github.com/netallion/netallion-mcp-lite/actions/workflows/ci.yml/badge.svg)](https://github.com/netallion/netallion-mcp-lite/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 **Free, local, IP-safe AI-development security — an MCP server from Netallion.**
 
 Netallion MCP Lite is a small [Model Context Protocol](https://modelcontextprotocol.io) server that helps you and your AI coding assistants avoid the most common mistake in AI-assisted development: leaking a credential. It flags a curated set of **commodity, high-confidence** secrets and credentials (AWS, GitHub, Stripe, OpenAI, private keys, database URIs, and more) in text and files.

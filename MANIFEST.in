@@ -1,6 +1,9 @@
 include README.md
 include PRIVACY.md
 include LICENSE
+include CHANGELOG.md
+include SECURITY.md
+include CONTRIBUTING.md
 recursive-include src/netallion_mcp_lite *.py
 recursive-include src/netallion_mcp_lite py.typed
 # Never ship tests, scripts, or internal docs — they legitimately reference the

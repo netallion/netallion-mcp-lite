@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,7 +7,8 @@ name = "netallion-mcp-lite"
 version = "0.1.0"
 description = "Free, local, IP-safe MCP server for AI-development security — commodity secret & credential checks from Netallion. Part of Agentic Development Governance."
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [{ name = "Netallion", email = "hello@netallion.ai" }]
 keywords = [
@@ -24,7 +25,6 @@ keywords = [
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
@@ -43,8 +43,10 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://www.netallion.ai"
-Documentation = "https://www.netallion.ai"
+Documentation = "https://github.com/netallion/netallion-mcp-lite#readme"
 Repository = "https://github.com/netallion/netallion-mcp-lite"
+Issues = "https://github.com/netallion/netallion-mcp-lite/issues"
+Changelog = "https://github.com/netallion/netallion-mcp-lite/blob/main/CHANGELOG.md"
 
 [project.scripts]
 netallion-mcp-lite = "netallion_mcp_lite.server:main"
