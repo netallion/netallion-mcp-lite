@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netallion-mcp-lite"
+version = "0.1.0"
+description = "Free, local, IP-safe MCP server for AI-development security — commodity secret & credential checks from Netallion. Part of Agentic Development Governance."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Netallion", email = "hello@netallion.ai" }]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "secrets",
+    "credentials",
+    "ai",
+    "agentic",
+    "governance",
+    "devsecops",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+# IP FIREWALL: the ONLY runtime dependency is the public MCP SDK.
+# Never add the proprietary Netallion detection engine or any private
+# Netallion package here. The firewall test and CI enforce this.
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://www.netallion.ai"
+Documentation = "https://www.netallion.ai"
+Repository = "https://github.com/netallion/netallion-mcp-lite"
+
+[project.scripts]
+netallion-mcp-lite = "netallion_mcp_lite.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+netallion_mcp_lite = ["py.typed"]

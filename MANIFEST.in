@@ -1,0 +1,11 @@
+include README.md
+include PRIVACY.md
+include LICENSE
+recursive-include src/netallion_mcp_lite *.py
+recursive-include src/netallion_mcp_lite py.typed
+# Never ship tests, scripts, or internal docs — they legitimately reference the
+# proprietary engine by name (as search terms / firewall assertions) and must
+# not end up in the public artifact.
+prune tests
+prune scripts
+prune docs
